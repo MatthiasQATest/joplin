@@ -50,6 +50,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@aikidosec/firewall@npm:1.8.35":
+  version: 1.8.35
+  resolution: "@aikidosec/firewall@npm:1.8.35"
+  checksum: 10/16e413fc6a4b8db4e341e6482f692bc7feb717947ad7f5eaaaeb9471bc7638fee200d3fcec9f3445d947f2af82ff00eac5ae66225e659153954b530d469505fe
+  languageName: node
+  linkType: hard
+
 "@algolia/autocomplete-core@npm:1.9.3":
   version: 1.9.3
   resolution: "@algolia/autocomplete-core@npm:1.9.3"
@@ -12851,6 +12858,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@joplin/server@workspace:packages/server"
   dependencies:
+    "@aikidosec/firewall": "npm:1.8.35"
     "@authenio/samlify-xmllint-wasm": "npm:1.0.1"
     "@aws-sdk/client-s3": "npm:3.928.0"
     "@fortawesome/fontawesome-free": "npm:5.15.4"
