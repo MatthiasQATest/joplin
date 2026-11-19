@@ -1,3 +1,5 @@
+const Zen = require('@aikidosec/firewall');
+
 // Allows displaying error stack traces with TypeScript file paths
 require('source-map-support').install();
 
@@ -223,6 +225,20 @@ async function main() {
 
 	app.use(apiVersionHandler);
 	app.use(ownerHandler);
+
+	app.use(async (ctx: AppContext, next: KoaNext) => {
+		if (ctx.joplin && ctx.joplin.owner) {
+			Zen.setUser({
+				id: ctx.joplin.owner.id,
+			});
+		}
+
+		return next();
+	});
+
+	// Call this after the auth middleware, as early as possible in the middleware stack
+	Zen.addKoaMiddleware(app);
+
 	app.use(checkAdminHandler);
 	app.use(notificationHandler);
 	app.use(clickJackingHandler);
